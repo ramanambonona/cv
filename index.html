@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ramanambonona Ambinintsoa | Économiste & Chercheur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a2530;
+            --gold: #f1c40f;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .avatar-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            margin-right: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .avatar-container i {
+            font-size: 100px;
+            color: rgba(255,255,255,0.2);
+        }
+        
+        .header-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .header-text h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .header-text p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 40%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iIzI5NGI2MSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgb3BhY2l0eT0iMC4xIi8+PC9zdmc+');
+            opacity: 0.3;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            padding: 20px 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        /* Profile Section */
+        .profile {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .profile p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .profile-highlight {
+            background: linear-gradient(to right, rgba(52, 152, 219, 0.1), transparent);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        
+        /* Education Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            top: 30px;
+            background-color: white;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+            right: auto;
+        }
+        
+        .timeline-content h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content .date {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            top: 25px;
+            right: -12px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            top: 25px;
+            left: -12px;
+            z-index: 1;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: #f1f5f9;
+        }
+        
+        .experience-tabs {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: white;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            margin: 0 5px;
+        }
+        
+        .tab-btn.active {
+            color: var(--secondary);
+            border-bottom: 3px solid var(--secondary);
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .tab-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+        
+        .job-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .job-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .job-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .job-date {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .job-company {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .job-description ul {
+            padding-left: 20px;
+        }
+        
+        .job-description li {
+            margin-bottom: 8px;
+        }
+        
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .pub-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pub-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .pub-header {
+            padding: 20px;
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+        }
+        
+        .pub-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .pub-type {
+            font-style: italic;
+			font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .pub-body {
+            padding: 20px;
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .pub-authors {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .pub-journal {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .pub-journal i {
+            margin-right: 8px;
+        }
+        
+        .pub-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .pub-link:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+		/* Working paper */
+		.workingpapers {
+			background-color: #fefefe;
+			padding: 80px 0;
+			border-top: 1px solid #eee;
+		}
+
+		.wp-list {
+			list-style: none;
+			padding-left: 0;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.wp-list li {
+			padding: 12px 20px;
+			margin-bottom: 10px;
+			background: #f5f9fc;
+			border-left: 4px solid var(--secondary);
+			border-radius: 4px;
+			font-size: 1rem;
+			color: #2c3e50;
+			font-style: italic;
+			transition: background 0.3s;
+		}						
+        /* Skills Section */
+        .skills {
+            background-color: #f1f5f9;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .skill-title i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-level {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: #e0e6ed;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 4px;
+        }
+		
+		.skill-name {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.skill-icon {
+			width: 20px;
+			height: 20px;
+			object-fit: contain;
+		}       
+        
+		.domain-list {
+            list-style: none;
+        }
+        
+        .domain-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .domain-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .domain-list li::before {
+            content: '•';
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            border-radius: 10px;
+            padding: 40px;
+            color: white;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                left: 0 !important;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+                right: auto;
+            }
+            
+            .timeline-content::after {
+                left: -10px !important;
+                right: auto !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .avatar-container {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                padding: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tab-buttons {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                margin: 5px 0;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-selector {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="avatar-container">
+					  <img src="https://media.licdn.com/dms/image/v2/D4E03AQG6cKI6fJjE6Q/profile-displayphoto-shrink_800_800/B4EZRovT5GG0Ac-/0/1736924022359?e=1755129600&v=beta&t=17pzIJ4ViyFd75t_YCeS473aqEN3S57eMDdO20FPQXs" 
+						   alt="Photo de profil de Dr. Ramanambonona"
+						   style="width: 100%; height: 100%; object-fit: cover; image-rendering: high-quality; border-radius: 50%;">
+				</div>
+                <div class="header-text">
+                    <h1 data-i18n="header.name">Dr. Ramanambonona Ambinintsoa</h1>
+                    <h2 data-i18n="header.title">Ph.D en Sciences Économiques</h2>
+                    <p data-i18n="header.description">Économiste de formation, passionné par l'enseignement et la recherche scientifique. Plus de dix ans d'expériences au Ministère de l'Économie et des Finances de Madagascar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="header-pattern"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#profile" data-i18n="nav.profile">Profil</a></li>
+                <li><a href="#education" data-i18n="nav.education">Formation</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
+                <li><a href="#publications" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>		
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profile">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="sections.profile">Profil Professionnel</h2>
+            </div>
+            <div class="profile">
+                <p data-i18n="profile.p1">Économiste spécialisé dans le domaine l'Économie du droit ou l'Analyse économique du droit, avec une expertise particulière dans l'Economie de dissuasion des activités illégales. Titulaire d'un Doctorat en Sciences Économiques de l'Université d'Antananarivo avec la mention Très Honorable avec Félicitations du Jury.</p>
+                
+                <p data-i18n="profile.p2">Mon parcours académique international comprend un Master en Développement de l'Université Senghor d'Alexandrie (bénéficiaire d'une bourse de mobilité de l'Union Européenne) et un Master en Économie appliquée de l'Université de Bordeaux 4 (Vice Major de Promotion).</p>
+                
+                <div class="profile-highlight" data-i18n="profile.quote">
+                    "Mon approche intègre la rigueur scientifique, l'innovation méthodologique et l'application pratique pour résoudre les défis économiques complexes, en particulier dans le domaine de la dissuasion des activités illégales."
+                </div>
+                
+                <p data-i18n="profile.p3">Fort de plus de dix ans d'expérience au Ministère de l'Économie et des Finances de Madagascar, j'ai développé une expertise dans l'analyse macroéconomique, la gestion des finances publiques, et la conception de politiques économiques efficaces.</p>
+                
+                <p data-i18n="profile.p4">Actuellement, je partage mes connaissances en tant qu'enseignant vacataire dans plusieurs institutions universitaires de Madagascar, où j'enseigne des matières allant de la microéconomie à l'économétrie avancée.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="sections.education">Parcours Académique</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date" data-i18n="education.date1">Décembre 2020 - Juillet 2024</span>
+                        <h3 data-i18n="education.degree1">Doctorat en Sciences Économiques</h3>
+						<h4 >
+						  <a data-i18n="education.university1" href="http://www.univ-antananarivo.mg/" 
+							 target="_blank" 
+							 rel="noopener noreferrer" 
+							 style="color: inherit; text-decoration: none;">
+							Université d'Antananarivo, Madagascar
+						  </a>
+						</h4>
+                        <ul>
+                            <li data-i18n="education.detail1">Sujet de thèse : "Importance des Approches Stochastiques et des Modèles Innovants en Economie de Dissuasion : Cas des Activités Illégales"</li>
+                            <li><em data-i18n="education.mention1">Mention très Honorable avec Félicitations du Jury</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date" data-i18n="education.date2">Octobre 2012 - Juin 2013</span>
+                        <h3 data-i18n="education.degree2">Master en Développement</h3>
+                        <h4 >
+						  <a data-i18n="education.university2" href="https://www.usenghor-francophonie.org/" 
+							 target="_blank" 
+							 rel="noopener noreferrer" 
+							 style="color: inherit; text-decoration: none;">
+							Université Senghor, Alexandrie, Egypte
+						  </a>
+						</h4>
+                        <ul>
+                            <li data-i18n="education.detail2">Bénéficiaire d'une bourse de mobilité, financée par l'Union Européenne</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date" data-i18n="education.date3">Septembre 2010 - Septembre 2011</span>
+                        <h3 data-i18n="education.degree3">Master en Économie appliquée</h3>
+                        <h4 >
+						  <a data-i18n="education.university3" href="https://www.u-bordeaux.fr/" 
+							 target="_blank" 
+							 rel="noopener noreferrer" 
+							 style="color: inherit; text-decoration: none;">
+							Université de Bordeaux, France
+						  </a>
+						</h4>
+                        <ul>
+                            <li data-i18n="education.detail3">Vice Major de Promotion</li>
+                            <li><em data-i18n="education.mention3">Mention bien</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date" data-i18n="education.date4">Janvier 2006 - Juin 2010</span>
+                        <h3 data-i18n="education.degree4">Maîtrise en Économie</h3>
+                        <h4 >
+						  <a data-i18n="education.university4" href="http://www.univ-antananarivo.mg/" 
+							 target="_blank" 
+							 rel="noopener noreferrer" 
+							 style="color: inherit; text-decoration: none;">
+							Université d'Antananarivo, Madagascar
+						  </a>
+						</h4>
+                        <ul>
+                            <li data-i18n="education.detail4">Option : Macroéconomie et Modélisation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="sections.experience">Expériences Professionnelles</h2>
+            </div>
+            <div class="experience-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="teaching" data-i18n="experience.teaching">Enseignement</button>
+                    <button class="tab-btn" data-tab="public" data-i18n="experience.public">Administration publique</button>
+                    <button class="tab-btn" data-tab="conferences" data-i18n="experience.conferences">Conférences</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="teaching-tab">
+                        <div class="job-item">
+                            <div class="job-header">
+                                <div class="job-title" data-i18n="experience.job1.title">Enseignant vacataire</div>
+                                <div class="job-date" data-i18n="experience.job1.date">Janv 2025 - Présent</div>
+                            </div>
+								<div class="job-company" >
+								  <a data-i18n="experience.job1.company"
+								     href="https://univ-itasy.rf.gd/" 
+									 target="_blank" 
+									 rel="noopener noreferrer" 
+									 style="color: inherit; text-decoration: none;">
+									Université de l'Itasy, Domaine Sciences de la Société
+								  </a>
+								</div>
+                            <div class="job-description">
+                                <ul>
+                                    <li data-i18n="experience.job1.detail1">Microéconomie I, II</li>
+                                    <li data-i18n="experience.job1.detail2">Macroéconomie I, II</li>
+                                    <li data-i18n="experience.job1.detail3">Démographie</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="job-item">
+                            <div class="job-header">
+                                <div class="job-title" data-i18n="experience.job2.title">Enseignant vacataire</div>
+                                <div class="job-date" data-i18n="experience.job2.date">Janv 2025 - Présent</div>
+                            </div>
+                            <div class="job-company" >
+								  <a data-i18n="experience.job2.company"
+								     href="http://ens.univ-antananarivo.mg/" 
+									 target="_blank" 
+									 rel="noopener noreferrer" 
+									 style="color: inherit; text-decoration: none;">
+									Ecole Normale Supérieure, Université d'Antananarivo
+								  </a>
+								</div>
+                            <div class="job-description">
+                                <ul>
+                                    <li data-i18n="experience.job2.detail1">Statistiques inférentielles</li>
+                                    <li data-i18n="experience.job2.detail2">Microéconomie avancée</li>
+                                    <li data-i18n="experience.job2.detail3">Macroéconomie avancée</li>
+                                </ul>
+                            </div>
+                        </div>
+						<div class="job-item">
+							<div class="job-header">
+								<div class="job-title" data-i18n="experience.job2.title">Enseignant vacataire</div>
+								<div class="job-date" data-i18n="experience.job2.date">Janv 2025 - Présent</div>
+							</div>
+							<div class="job-company">
+								<a data-i18n="experience.job2bis.company"
+								   href="https://iesav.mg/"
+								   target="_blank"
+								   rel="noopener noreferrer"
+								   style="color: inherit; text-decoration: none;">
+								   Institut de Hautes Etudes en Sciences Sociales, Université d'Antsirabe
+								</a>
+							</div>
+							<div class="job-description">
+								<ul>
+									<li data-i18n="experience.job2bis.detail1">Microéconomie</li>
+									<li data-i18n="experience.job2bis.detail2">Probabilité - Statistiques</li>
+								</ul>
+							</div>
+						</div>
+                    </div>
+
+                    
+                    <div class="tab-pane" id="public-tab">
+                        <div class="job-item">
+                            <div class="job-header">
+                                <div class="job-title" data-i18n="experience.job3.title">Économiste</div>
+                                <div class="job-date" data-i18n="experience.job3.date">Nov 2024 - Présent</div>
+                            </div>
+                            <div class="job-company">
+								<a data-i18n="experience.job3.company"
+								   href="http://www.tresorpublic.mg/"
+								   target="_blank"
+								   rel="noopener noreferrer"
+								   style="color: inherit; text-decoration: none;">
+								   Ministère de l'Économie et des Finances - Direction des Etudes
+								</a>
+							</div>
+                            <div class="job-description">
+                                <ul>
+                                    <li data-i18n="experience.job3.detail1">Production Périodique du Focus Économique</li>
+                                    <li data-i18n="experience.job3.detail2">Production de Statistique des Finances Publiques</li>
+                                    <li data-i18n="experience.job3.detail3">Etudes et analyses économiques liées aux finances publiques</li>
+									<li data-i18n="experience.job3.detail4">Production de Note de Conjoncture sur les Finances Publiques</li>
+                                </ul>
+                            </div>
+                        </div>
+						
+						<div class="job-item">
+							<div class="job-header">
+								<div class="job-title" data-i18n="experience.job4.title">Chef de Service des Ressources Affaires Générales</div>
+								<div class="job-date" data-i18n="experience.job4.date">Nov 2022 - Nov 2024</div>
+							</div>
+							<div class="job-company">
+								<a data-i18n="experience.job4.company"
+								   href="https://www.mef.gov.mg/imprimerie-nationale/"
+								   target="_blank"
+								   rel="noopener noreferrer"
+								   style="color: inherit; text-decoration: none;">
+								   Ministère de l'Économie et des Finances - Direction de l'Imprimerie Nationale
+								</a>
+							</div>
+							<div class="job-description">
+								<ul>
+									<li data-i18n="experience.job4.detail1">Gestion des Affaires administratives et financières</li>
+									<li data-i18n="experience.job4.detail2">Gestion de la formation et de carrière du personnel</li>
+									<li data-i18n="experience.job4.detail3">Gestion de la Logistique et de la sécurité des actifs</li>
+									<li data-i18n="experience.job4.detail4">Ordonnateur secondaire central suppléant du budget annexe de l'Imprimerie Nationale</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="job-item">
+							<div class="job-header">
+								<div class="job-title" data-i18n="experience.job5.title">Chargé de décaissement des fonds d'emprunts extérieurs</div>
+								<div class="job-date" data-i18n="experience.job5.date">Août 2021 - Nov 2022</div>
+							</div>
+							<div class="job-company">
+								<a data-i18n="experience.job5.company"
+								   href="http://www.tresorpublic.mg/"
+								   target="_blank"
+								   rel="noopener noreferrer"
+								   style="color: inherit; text-decoration: none;">
+								   Ministère de l'Économie et des Finances - Direction de la Dette Publique
+								</a>
+							</div>
+							<div class="job-description">
+								<ul>
+									<li data-i18n="experience.job5.detail1">Expertise dans le mécanisme de décaissement des fonds d'emprunts extérieurs</li>
+									<li data-i18n="experience.job5.detail2">Analyse de la concessionnalité des prêts extérieurs</li>
+									<li data-i18n="experience.job5.detail3">Traitement des demandes de décaissement auprès des bailleurs de fonds</li>
+									<li data-i18n="experience.job5.detail4">Traitement des paiements de service de la dette extérieure</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="job-item">
+							<div class="job-header">
+								<div class="job-title" data-i18n="experience.job6.title">Chef de Division des Opérations Courantes</div>
+								<div class="job-date" data-i18n="experience.job6.date">Août 2013 - Août 2021</div>
+							</div>
+							<div class="job-company">
+								<a data-i18n="experience.job6.company"
+								   href="http://www.tresorpublic.mg/"
+								   target="_blank"
+								   rel="noopener noreferrer"
+								   style="color: inherit; text-decoration: none;">
+								   Ministère de l'Économie et des Finances - Direction des Opérations Financières
+								</a>
+							</div>
+							<div class="job-description">
+								<ul>
+									<li data-i18n="experience.job6.detail1">Application de la réglementation des opérations de changes</li>
+									<li data-i18n="experience.job6.detail2">Optimisation de la détection d'infractions des changes</li>
+									<li data-i18n="experience.job6.detail3">Contrôle a posteriori du rapatriement des recettes d'exportation (biens et services)</li>
+									<li data-i18n="experience.job6.detail4">Contrôle des transferts vers l'étranger en matière d'importations (biens et services)</li>
+								</ul>
+							</div>
+						</div>						
+                    
+					</div>
+                    
+                    <div class="tab-pane" id="conferences-tab">
+                        <div class="job-item">
+                            <div class="job-header">
+                                <div class="job-title" data-i18n="experience.conf1.title">8th International Conference on Law and Economics</div>
+                                <div class="job-date" data-i18n="experience.conf1.date">12-13 Novembre 2022</div>
+                            </div>
+                            <div class="job-company" >
+							  <a data-i18n="experience.conf1.company"
+							  href="https://nludelhi.ac.in/" 
+							  target="_blank" 
+							  rel="noopener noreferrer" 
+							  style="color: inherit; 
+							  text-decoration: none;">
+								National Law University, Delhi (NLUD)en association avec l'Indian Association of Law and Economics
+							  </a>							
+							</div>
+                            <div class="job-description">
+                                <p data-i18n="experience.conf1.detail">
+								Papier présenté : "Optimal Law Enforcement: Nuance between Arrest and Punishment". 
+								Organisateur : Prof. (Dr.) Harpreet Kaur (registrar@nludelhi.ac.in)
+								</p>
+                            </div>
+                        </div>
+						
+						<div class="job-item">
+                            <div class="job-header">
+                                <div class="job-title" data-i18n="experience.conf2.title">19th annual conference of the German Law and Economics Association</div>
+                                <div class="job-date" data-i18n="experience.conf2.date">6-8 Juillet 2022, Nancy France</div>
+                            </div>
+                            <div class="job-company" >
+							  <a data-i18n="experience.conf2.company"
+							  href="https://glea.hypotheses.org/" 
+							  target="_blank" 
+							  rel="noopener noreferrer" 
+							  style="color: inherit; 
+							  text-decoration: none;">
+								German Law and Economics Association (GLEA)
+							  </a>							
+							</div>
+                            <div class="job-description">
+                                <p data-i18n="experience.conf2.detail">
+								Papier présenté : "Optimal Law Enforcement: Nuance between Arrest and Punishment".
+								Organisateur : Prof. Andreas Engert (andreas.engert@fu-berlin.de)
+								</p>
+                            </div>
+                        </div>
+						
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="sections.publications">Productions Scientifiques</h2>
+            </div>
+            <div class="publications-grid">
+                <div class="pub-card">
+                    <div class="pub-header">
+                        <h3 data-i18n="publications.type1">Article Publié</h3>
+                        <div class="pub-type">
+							<a 
+							data-i18n="publications.journal1"
+							href="https://www.revuefreg.fr/" 
+							target="_blank" 
+							rel="noopener noreferrer" 
+							style="color: inherit; text-decoration: none;">
+							Revue Française d'Economie et de Gestion
+							</a>
+						</div>
+                    </div>
+                    <div class="pub-body">
+                        <div class="pub-title" data-i18n="publications.title1">Implications macroéconomiques de la corruption : Le cas de Madagascar</div>
+                        <div class="pub-authors" data-i18n="publications.authors1">RAMANAMBONONA A., RAZAFINDRAVONONA J. (2023)</div>
+                        <div class="pub-journal">
+                            <i class="fas fa-book-open"></i>
+                            <span data-i18n="publications.volume1">Vol 04, N°07</span>
+                        </div>
+                        <a href="https://www.revuefreg.fr/index.php/home/article/view/1187" class="pub-link" data-i18n="publications.link">Lire l'article</a>
+                    </div>
+                </div>
+                
+                <div class="pub-card">
+                    <div class="pub-header">
+                        <h3 data-i18n="publications.type1">Article Publié</h3>
+                        <div class="pub-type">
+							  <a 
+							  data-i18n="publications.journal2"
+							  href="https://www.sciencedirect.com/journal/journal-of-economic-criminology" 
+							  target="_blank" 
+							  rel="noopener noreferrer" 
+							  style="color: inherit; text-decoration: none;">
+								Journal of Economic Criminology
+							  </a>						
+						</div>
+                    </div>
+                    <div class="pub-body">
+                        <div class="pub-title" data-i18n="publications.title2">Une approche économique de la dissuasion des infractions de change : L'expérience de Madagascar</div>
+                        <div class="pub-authors" data-i18n="publications.authors2">RAMANAMBONONA A. (2024)</div>
+                        <div class="pub-journal">
+                            <i class="fas fa-book-open"></i>
+                            <span data-i18n="publications.volume2">Vol 03, Mars</span>
+                        </div>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S2949791424000010" class="pub-link" data-i18n="publications.link">Lire l'article</a>
+                    </div>
+					
+					
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Documents de travails -->
+	<section id="workingpapers" class="workingpapers">
+		<div class="container">
+			<div class="section-title">
+				<h2 data-i18n="sections.workingpaper">Documents de travail</h2>
+			</div>
+			<ul class="wp-list">
+				<li data-i18n="wp.1"></li>
+				<li data-i18n="wp.2"></li>
+				<li data-i18n="wp.3"></li>
+				<li data-i18n="wp.4"></li>
+				<li data-i18n="wp.5"></li>
+				<li data-i18n="wp.6"></li>
+				<li data-i18n="wp.7"></li>
+				<li data-i18n="wp.8"></li>
+				<li data-i18n="wp.9"></li>
+				<li data-i18n="wp.10"></li>
+				<li data-i18n="wp.11"></li>
+				<li data-i18n="wp.12"></li>
+			</ul>
+		</div>
+	</section>
+    	
+	<!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="sections.skills">Compétences & Domaines</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3 data-i18n="skills.software">Logiciels</h3>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+								<div class="skill-name" data-i18n="skills.office">
+									<img src="https://img.icons8.com/color/48/000000/microsoft-office-2019.png" alt="Office" class="skill-icon">
+									Microsoft Office
+								</div>
+                            <div class="skill-level" data-i18n="skills.level1">Avancé</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name" data-i18n="skills.latex">LaTeX</div>
+                            <div class="skill-level" data-i18n="skills.level1">Avancé</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+					<div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name" data-i18n="skills.python">Python</div>
+                            <div class="skill-level" data-i18n="skills.levelpython">Intermédiaire</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <i class="fas fa-globe-africa"></i>
+                        <h3 data-i18n="skills.languages">Langues</h3>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name" data-i18n="skills.lang1">Français</div>
+                            <div class="skill-level" data-i18n="skills.level2">Langue de travail</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>                  
+					<div class="skill-item">
+						<div class="skill-header">
+							<div class="skill-name" data-i18n="skills.lang2">Anglais</div>
+							<div class="skill-level" data-i18n="skills.level3">Langue secondaire</div>
+						</div>
+						<div class="skill-bar">
+							<div class="skill-progress" style="width: 80%"></div>
+						</div>
+					</div>
+
+					<div class="skill-item">
+						<div class="skill-header">
+							<div class="skill-name" data-i18n="skills.lang3">Malagasy</div>
+							<div class="skill-level" data-i18n="skills.level4">Langue Maternelle</div>
+						</div>
+						<div class="skill-bar">
+							<div class="skill-progress" style="width: 100%"></div>
+						</div>
+					</div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-title">
+                        <i class="fas fa-chart-line"></i>
+                        <h3 data-i18n="skills.domains">Domaines d'Expertise</h3>
+                    </div>
+                    
+                    <ul class="domain-list">
+                        <li data-i18n="skills.domain1">Modélisation économique et économétrique</li>
+                        <li data-i18n="skills.domain2">Économie Publique</li>
+                        <li data-i18n="skills.domain3">Microéconomie appliquée</li>
+                        <li data-i18n="skills.domain4">Économie du droit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-i18n="sections.contact">Contact</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.info">Coordonnées</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact.email">Email</h4>
+                            <a href="mailto:ambinintsoa.uat.ead2@gmail.com">ambinintsoa.uat.ead2@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact.phone">Téléphone</h4>
+                            <a href="tel:+261340762718">+261 3* *** ** **</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact.address">Adresse</h4>
+                            <p>Ecole Normale Supérieure Ampefiloha<br>Antananarivo 101, Madagascar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact.website">Site Web</h4>
+                            <a href="https://www.linkedin.com/in/ambinintsoa-ramanambonona-7a4283244/" target="_blank">Profil LinkedIn</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ambinintsoa-ramanambonona-7a4283244/"><i class="fab fa-linkedin-in"></i></a>
+						<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5332109" 
+						   target="_blank" 
+						   rel="noopener noreferrer" 
+						   style="display: inline-flex; align-items: center; text-decoration: none;">
+						  <img src="https://cdn.ssrn.com/ssrn-global-header/11589acb53bc518aa22929bf19add113.svg" 
+							   alt="SSRN" 
+							   style="height: 16px; margin-right: 3px ; margin-right: 5px;">
+						</a>
+						
+                        <a href="https://www.researchgate.net/profile/Ambinintsoa-Ramanambonona" 
+						   target="_blank" 
+						   rel="noopener noreferrer" 
+						   style="display: inline-flex; align-items: center; text-decoration: none;">
+						  <img src="https://img.icons8.com/?size=80&id=EaenHqZcKBuh&format=png" 
+							   alt="researchgate" 
+							   style="height: 22px">
+						</a>
+						
+						<a href="https://scholar.google.com/citations?user=wXS5-dEAAAAJ&hl=en"
+						   style="opacity: 1;">
+						  <img src="https://img.icons8.com/?size=50&id=okYCvWotC0uX&format=png"
+						  <i class="fa-brands fa-google-scholar"></i>
+						</a>
+						
+						<a href="https://github.com/ramanambonona/" 
+						   target="_blank" 
+						   rel="noopener noreferrer" 
+						   style="text-decoration: none; color: inherit;">
+						  <i class="fab fa-github" style="font-size: 20px;"></i>
+						</a>
+
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 data-i18n="contact.message">Envoyez un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">Nom Complet</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">Adresse Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="contact.form.subject">Sujet</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-i18n="contact.form.submit">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Dr. Ramanambonona Ambinintsoa. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <p class="copyright" data-i18n="footer.design">Site conçu avec soin pour présenter une carrière académique et professionnelle d'excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            fr: {
+                "header.name": "Dr. Ramanambonona Ambinintsoa",
+                "header.title": "Ph.D en Sciences Économiques",
+                "header.description": "Économiste de formation, passionné par l'enseignement et la recherche scientifique. Plus de dix ans d'expériences au Ministère de l'Économie et des Finances de Madagascar.",
+                
+                "nav.profile": "Profil",
+                "nav.education": "Formation",
+                "nav.experience": "Expérience",
+                "nav.publications": "Publications",
+                "nav.skills": "Compétences",
+                "nav.contact": "Contact",
+                
+                "sections.profile": "Profil Professionnel",
+                "sections.education": "Parcours Académique",
+                "sections.experience": "Expériences Professionnelles",
+                "sections.publications": "Productions Scientifiques",
+                "sections.skills": "Compétences & Domaines",
+                "sections.contact": "Contact",
+                
+                "profile.p1": "Économiste spécialisé dans le domaine l'Économie du droit ou l'Analyse économique du droit, avec une expertise particulière dans l'Economie de dissuasion des activités illégales. Titulaire d'un Doctorat en Sciences Économiques de l'Université d'Antananarivo avec la mention Très Honorable avec Félicitations du Jury.",
+                "profile.p2": "Mon parcours académique international comprend un Master en Développement de l'Université Senghor d'Alexandrie (bénéficiaire d'une bourse de mobilité de l'Union Européenne) et un Master en Économie appliquée de l'Université de Bordeaux 4 (Vice Major de Promotion).",
+                "profile.quote": "\"Mon approche intègre la rigueur scientifique, l'innovation méthodologique et l'application pratique pour résoudre les défis économiques complexes, en particulier dans le domaine de la dissuasion des activités illégales.\"",
+                "profile.p3": "Fort de plus de dix ans d'expérience au Ministère de l'Économie et des Finances de Madagascar, j'ai développé une expertise dans l'analyse macroéconomique, la gestion des finances publiques, et la conception de politiques économiques efficaces.",
+                "profile.p4": "Actuellement, je partage mes connaissances en tant qu'enseignant vacataire dans plusieurs institutions universitaires de Madagascar, où j'enseigne des matières allant de la microéconomie à l'économétrie avancée.",
+                
+                "education.date1": "Décembre 2020 - Juillet 2024",
+                "education.degree1": "Doctorat en Sciences Économiques",
+                "education.university1": "Université d'Antananarivo, Madagascar",
+                "education.detail1": "Sujet de thèse : \"Importance des Approches Stochastiques et des Modèles Innovants en Economie de Dissuasion : Cas des Activités Illégales\"",
+                "education.mention1": "Mention très Honorable avec Félicitations du Jury",
+                
+                "education.date2": "Octobre 2012 - Juin 2013",
+                "education.degree2": "Master en Développement",
+                "education.university2": "Université Senghor, Alexandrie, Egypte",
+                "education.detail2": "Bénéficiaire d'une bourse de mobilité, financée par l'Union Européenne",
+                
+                "education.date3": "Septembre 2010 - Septembre 2011",
+                "education.degree3": "Master en Économie appliquée",
+                "education.university3": "Université de Bordeaux, France",
+                "education.detail3": "Vice Major de Promotion",
+                "education.mention3": "Mention bien",
+                
+                "education.date4": "Janvier 2006 - Juin 2010",
+                "education.degree4": "Maîtrise en Économie",
+                "education.university4": "Université d'Antananarivo, Madagascar",
+                "education.detail4": "Option : Macroéconomie et Modélisation",
+                
+                "experience.teaching": "Enseignement",
+                "experience.public": "Administration publique",
+                "experience.conferences": "Conférences",
+                
+                "experience.job1.title": "Enseignant vacataire",
+                "experience.job1.date": "Janv 2025 - Présent",
+                "experience.job1.company": "Université de l'Itasy, Domaine Sciences de la Société",
+                "experience.job1.detail1": "Microéconomie I, II",
+                "experience.job1.detail2": "Macroéconomie I, II",
+                "experience.job1.detail3": "Démographie",
+                
+                "experience.job2.title": "Enseignant vacataire",
+                "experience.job2.date": "Janv 2025 - Présent",
+                "experience.job2.company": "Ecole Normale Supérieure, Université d'Antananarivo",
+				"experience.job2bis.company": "Institut de Hautes Etudes en Sciences Sociales, Université d'Antsirabe",
+                "experience.job2.detail1": "Statistiques inférentielles",
+                "experience.job2.detail2": "Microéconomie avancée",
+				"experience.job2.detail3": "Macroéconomie avancée",
+				"experience.job2bis.detail1": "Microéconomie",
+                "experience.job2bis.detail2": "Probabilité - Statistiques",
+                
+                "experience.job3.title": "Économiste",
+                "experience.job3.date": "Nov 2024 - Présent",
+                "experience.job3.company": "Ministère de l'Économie et des Finances - Direction Générale du Trésor - Direction des Etudes",
+                "experience.job3.detail1": "Production périodique du Focus Économique",
+                "experience.job3.detail2": "Production de Statistique des Finances Publiques",
+                "experience.job3.detail3": "Etudes et analyses économiques liées aux finances publiques",
+				"experience.job3.detail4": "Production de Note de Conjoncture sur les Finances Publiques",
+				
+				"experience.job4.title": "Chef de Service des Ressources Affaires Générales",
+                "experience.job4.date": "Nov 2022 - Nov 2024",
+                "experience.job4.company": "Ministère de l'Économie et des Finances - Direction de l'Imprimerie Nationale",
+                "experience.job4.detail1": "Gestion des Affaires administratives et financières",
+                "experience.job4.detail2": "Gestion de la formation et de carrière du personnel",
+                "experience.job4.detail3": "Gestion de la Logistique et de la sécurité des actifs",
+				"experience.job4.detail4": "Ordonnateur secondaire suppléant du budget annexe de l'Imprimerie Nationale",
+				
+				"experience.job5.title": "Chargé de décaissement des fonds d'emprunts extérieurs",
+                "experience.job5.date": "Août 2021 - Nov 2022",
+                "experience.job5.company": "Ministère de l'Économie et des Finances - Direction Générale du Trésor -  Direction de la Dette Extérieure",
+                "experience.job5.detail1": "Expertise dans le mécanisme de décaissement des fonds d'emprunts extérieurs",
+                "experience.job5.detail2": "Analyse de la concessionnalité des prêts extérieurs",
+                "experience.job5.detail3": "Traitement des demandes de décaissement auprès des bailleurs de fonds",
+				"experience.job5.detail4": "Traitement des paiements de service de la dette extérieure",
+				
+				"experience.job6.title": "Chef de Division des Opérations Courantes",
+                "experience.job6.date": "Août 2013 - Août 2021",
+                "experience.job6.company": "Ministère de l'Économie et des Finances - Direction Générale du Trésor -  Direction des Opérations Financières",
+                "experience.job6.detail1": "Application de la réglementation des opérations de changes",
+                "experience.job6.detail2": "Optimisation de la détection d'infractions des changes",
+                "experience.job6.detail3": "Contrôle a posteriori du rapatriement des recettes d'exportation (biens et services)",
+				"experience.job6.detail4": "Contrôle des transferts vers l'étranger en matière d'importation (biens et services)",
+				
+                
+                "experience.conf1.title": "8th International Conference on Law and Economics",
+                "experience.conf1.date": "12-13 Novembre 2022",
+                "experience.conf1.company": "National Law University, Delhi (NLUD)",
+                "experience.conf1.detail": "Papier présenté : \"Optimal Law Enforcement: Nuance between Arrest and Punishment\". Organisateur : Prof. (Dr.) Harpreet Kaur (registrar@nludelhi.ac.in)",
+                
+				"experience.conf2.title": "19th annual conference of the German Law and Economics Association",
+                "experience.conf2.date": "6-8 Juillet 2022, Nancy France",
+                "experience.conf2.company": "German Law and Economics Association (GLEA)",
+                "experience.conf2.detail": "Papier présenté : \"Optimal Law Enforcement: Nuance between Arrest and Punishment\". Organisateur : Prof. Andreas Engert (andreas.engert@fu-berlin.de)",
+				
+                "publications.type1": "Article Publié",
+                "publications.journal1": "Revue Française d'Economie et de Gestion",
+                "publications.title1": "Implications macroéconomiques de la corruption : Le cas de Madagascar",
+                "publications.authors1": "RAMANAMBONONA A., RAZAFINDRAVONONA J. (2023)",
+                "publications.volume1": "Vol 04, N°07",
+                
+                "publications.journal2": "Journal of Economic Criminology",
+                "publications.title2": "Une approche économique de la dissuasion des infractions de change : L'expérience de Madagascar",
+                "publications.authors2": "RAMANAMBONONA A. (2024)",
+                "publications.volume2": "Vol 03, Mars",
+                
+                "publications.link": "Lire l'article",
+                
+                "sections.workingpaper": "Documents de travail",
+				"wp.1": "Reputation and Optimal law enforcement (co-écrit avec un professeur en économie)",
+				"wp.2": "Harm repairing and Deterrence Mechanisms",
+				"wp.3": "Optimal Enforcement under Whistleblower's Dilemma",
+				"wp.4": "On the optimal deterrence and the combinaison of fines and imprisonment",
+				"wp.5": "Recidivism and Adaptive expectation",
+				"wp.6": "Effet Dissuassif de la Castration sur les agressions sexuelles : la loi Malagasy",
+				"wp.7": "Modèle de Kidnapping : Extension du Jeu de Selten et la réalité à Madagascar (co-écrit avec un professeur en économie)",
+				"wp.8": "An economic approach of « Fihavanana Malagasy » (co-écrit avec un Professeur en Économie, et quelques Professeurs en Mathématique)",
+				"wp.9": "Théorie de la volonté : Explications alternatives de l’échec du marché (co-écrit avec des Professeurs en Économie)",
+				"wp.10": "Éducation et Dynamique d'Innovation : Extension des modèles de Croissance endogène (co-écrit avec des Professeurs en économie)",
+				"wp.11": "Modèle de taxation optimale : TVA Optimale avec Secteur Informel et Inégalités à Madagascar (co-écrit avec des collègues au MEF)",
+				"wp.12": "Dynamique de l’effet de retard de décaissement des financements extérieurs : Évidence à Madagascar (co-écrit avec des collègues au MEF)",
+				
+				"skills.software": "Logiciels",
+                "skills.office": "Microsoft Office",
+                "skills.level1": "Avancé",
+                "skills.latex": "LaTeX",
+				"skills.levelpython": "Intermédiaire",
+				"skills.python": "Python",
+                
+                "skills.languages": "Langues",
+                "skills.lang1": "Français",
+                "skills.level2": "Langue de travail",
+                "skills.lang2": "Anglais",
+                "skills.level3": "Langue secondaire",
+				"skills.lang3": "Malagasy",
+                "skills.level4": "Langue Maternelle",
+                
+                "skills.domains": "Domaines d'Expertise",
+                "skills.domain1": "Modélisation économique et économétrique",
+                "skills.domain2": "Économie Publique",
+                "skills.domain3": "Microéconomie appliquée",
+                "skills.domain4": "Économie du droit",
+                
+                "contact.info": "Coordonnées",
+                "contact.email": "Email",
+                "contact.phone": "Téléphone",
+                "contact.address": "Adresse",
+                "contact.website": "Site Web",
+                
+                "contact.message": "Envoyez un message",
+                "contact.form.name": "Nom Complet",
+                "contact.form.email": "Adresse Email",
+                "contact.form.subject": "Sujet",
+                "contact.form.message": "Message",
+                "contact.form.submit": "Envoyer le Message",
+                
+                "footer.rights": "Tous droits réservés.",
+                "footer.design": "Ce n’est pas ce que l’on sait qui rend sage, mais la manière dont on le met au service du juste."
+            },
+            en: {
+                "header.name": "Dr. Ramanambonona Ambinintsoa",
+                "header.title": "Ph.D in Economics",
+                "header.description": "Trained economist passionate about teaching and scientific research. Over ten years of experience at the Ministry of Economy and Finance of Madagascar.",
+                
+                "nav.profile": "Profile",
+                "nav.education": "Education",
+                "nav.experience": "Experience",
+                "nav.publications": "Publications",
+                "nav.skills": "Skills",
+                "nav.contact": "Contact",
+                
+                "sections.profile": "Professional Profile",
+                "sections.education": "Academic Background",
+                "sections.experience": "Professional Experience",
+                "sections.publications": "Scientific output",
+                "sections.skills": "Skills & Domains",
+                "sections.contact": "Contact",
+                
+                "profile.p1": "Economist specialized in the field of Law and Economics, with particular expertise in the Economics of Deterrence applied to illegal activities. Holder of a Ph.D. in Economics from the University of Antananarivo, awarded with the distinction Très Honorable avec Félicitations du Jury (Highest Honors with Committee Praise)",
+                "profile.p2": "My international academic background includes a Master's degree in Development from Senghor University in Alexandria (recipient of a European Union mobility scholarship), and a Master's degree in Applied Economics from the University of Bordeaux IV (ranked second in class).",
+                "profile.quote": "\"My approach combines scientific rigor, methodological innovation, and practical application to address complex economic challenges, particularly in the field of deterrence of illegal activities..\"",
+                "profile.p3": "With over ten years of experience at Madagascar's Ministry of Economy and Finance, I have developed expertise in macroeconomic analysis, public finance management, and designing effective economic policies.",
+                "profile.p4": "Currently, I share my knowledge as a part-time lecturer at several university institutions in Madagascar, where I teach subjects ranging from microeconomics to advanced econometrics.",
+                
+                "education.date1": "December 2020 - July 2024",
+                "education.degree1": "Ph.D in Economics",
+                "education.university1": "University of Antananarivo, Madagascar",
+                "education.detail1": "Thesis topic: \"Importance of Stochastic Approaches and Innovative Models in Deterrence Economics: Case of Illegal Activities\"",
+                "education.mention1": "Highest Honors with Committee Praise",
+                
+                "education.date2": "October 2012 - June 2013",
+                "education.degree2": "Master in Development",
+                "education.university2": "Senghor University, Alexandria, Egypt",
+                "education.detail2": "Recipient of a mobility scholarship funded by the European Union",
+                
+                "education.date3": "September 2010 - September 2011",
+                "education.degree3": "Master in Applied Economics",
+                "education.university3": "University of Bordeaux, France",
+                "education.detail3": "Second in Class",
+                "education.mention3": "With Merit",
+                
+                "education.date4": "January 2006 - June 2010",
+                "education.degree4": "Master's in Economics",
+                "education.university4": "University of Antananarivo, Madagascar",
+                "education.detail4": "Specialization: Macroeconomics and Modeling",
+                
+                "experience.teaching": "Teaching",
+                "experience.public": "Public Administration",
+                "experience.conferences": "Conferences",
+                
+                "experience.job1.title": "Part-time Lecturer",
+                "experience.job1.date": "Jan 2025 - Present",
+                "experience.job1.company": "University of Itasy, Social Sciences Department",
+                "experience.job1.detail1": "Microeconomics I, II",
+                "experience.job1.detail2": "Macroeconomics I, II",
+                "experience.job1.detail3": "Demography",
+                
+                "experience.job2.title": "Part-time Lecturer",
+                "experience.job2.date": "Jan 2025 - Present",
+                "experience.job2.company": "Higher Normal School, University of Antananarivo",
+				"experience.job2bis.company": "Institute of Advanced Studies in Social Sciences, University of Antsirabe",
+                "experience.job2.detail1": "Inferential Statistics",
+                "experience.job2.detail2": "Advanced Microeconomics",
+				"experience.job2.detail3": "Advanced Macroeconomics",
+				"experience.job2bis.detail1": "Microeconomics",
+                "experience.job2bis.detail2": "Statistics - Probability",
+                
+                "experience.job3.title": "Economist",
+                "experience.job3.date": "Nov 2024 - Present",
+                "experience.job3.company": "Ministry of Economy and Finance - General Treasury Directorate - Studies Department",
+                "experience.job3.detail1": "Periodic edition of the \"Economic Focus\"",
+                "experience.job3.detail2": "Production of Public Finance Statistics",
+                "experience.job3.detail3": "Economic studies and analyses related to public finances",
+				"experience.job3.detail4": "Production of economic reports on public finances.",
+				
+				"experience.job4.title": "Head of General Affairs and Resources",
+                "experience.job4.date": "Nov 2022 - Nov 2024",
+                "experience.job4.company": "Ministry of Economy and Finance - National Printing Department",
+                "experience.job4.detail1": "Administrative and financial affairs Management",
+                "experience.job4.detail2": "Staff training and careers Management",
+                "experience.job4.detail3": "Logistics and asset security Management",
+				"experience.job4.detail4": "Deputy central authorizing officer for the annex budget of the National Printing Office.",
+				
+				"experience.job5.title": "External Loan Disbursement Officer",
+				"experience.job5.date": "Aug 2021 - Nov 2022",
+				"experience.job5.company": "Ministry of Economy and Finance - General Treasury Directorate - Public Debt Department",
+				"experience.job5.detail1": "Expertise in the disbursement mechanisms of external loan funds",
+				"experience.job5.detail2": "Analysis of the concessionality of external loans",
+				"experience.job5.detail3": "Processing disbursement requests to Lenders ",
+				"experience.job5.detail4": "Processing external debt service payments",
+
+				"experience.job6.title": "Head of the Division of Current Operations",
+				"experience.job6.date": "Aug 2013 – Aug 2021",
+				"experience.job6.company": "Ministry of Economy and Finance – General Treasury Directorate -  Financial Operations Department",
+				"experience.job6.detail1": "Enforcement of foreign exchange regulations",
+				"experience.job6.detail2": "Optimization of foreign exchange offense detection",
+				"experience.job6.detail3": "Post-verification of export revenue repatriation (goods and services)",
+				"experience.job6.detail4": "Control of outward transfers related to imports (goods and services)",				
+                
+                "experience.conf1.title": "8th International Conference on Law and Economics",
+                "experience.conf1.date": "November 12-13, 2022",
+                "experience.conf1.company": "National Law University, Delhi (NLUD)",
+                "experience.conf1.detail": "Paper presented: \"Optimal Law Enforcement: Nuance between Arrest and Punishment\". Organizer : Prof. (Dr.) Harpreet Kaur (registrar@nludelhi.ac.in)",
+                
+				"experience.conf1.title": "19th annual conference of the German Law and Economics Association",
+                "experience.conf1.date": "July 6-8, 2022 in Nancy France",
+                "experience.conf1.company": "German Law and Economics Association (GLEA)",
+                "experience.conf1.detail": "Paper presented: \"Optimal Law Enforcement: Nuance between Arrest and Punishment\". Organizer : Prof. Andreas Engert (andreas.engert@fu-berlin.de)",
+				
+                "publications.type1": "Published Article",
+                "publications.journal1": "French Journal of Economics and Management",
+                "publications.title1": "Macroeconomic Implications of Corruption: The Case of Madagascar",
+                "publications.authors1": "RAMANAMBONONA A., RAZAFINDRAVONONA J. (2023)",
+                "publications.volume1": "Vol 04, No.07",
+                
+                "publications.journal2": "Journal of Economic Criminology",
+                "publications.title2": "An Economic Approach to Deterring Foreign Exchange Offenses: Evidence from Madagascar",
+                "publications.authors2": "RAMANAMBONONA A. (2024)",
+                "publications.volume2": "Vol 03, March",
+                
+                "publications.link": "Read article",
+                
+				"sections.workingpaper": "Working Papers",
+				"wp.1": "Reputation and Optimal Law Enforcement (co-authored with a Professor of Economics)",
+				"wp.2": "Harm Repairing and Deterrence Mechanisms",
+				"wp.3": "Optimal Enforcement under the Whistleblower's Dilemma",
+				"wp.4": "Optimal Deterrence and the Combination of Fines and Imprisonment",
+				"wp.5": "Recidivism and Adaptive Expectations",
+				"wp.6": "Deterrent Effect of Castration on Sexual Assaults: The Malagasy Law",
+				"wp.7": "Kidnapping Model: Extension of Selten’s Game and the Reality in Madagascar (co-authored with a Professor of Economics)",
+				"wp.8": "An Economic Approach of 'Fihavanana Malagasy' (co-authored with an Economics Professor and several Math Professors)",
+				"wp.9": "Willpower Theory: Alternative Explanations for Market Failure (co-authored with Professors of Economics)",
+				"wp.10": "Education and Innovation Dynamics: Extension of Endogenous Growth Models (co-authored with Professors of Economics)",
+				"wp.11": "Optimal Taxation Model: VAT with Informal Sector and Inequality in Madagascar (co-authored with MEF colleagues)",
+				"wp.12": "Dynamics of Delayed Disbursement of External Financing: Evidence from Madagascar (co-authored with MEF colleagues)",
+								
+				"skills.software": "Software",
+                "skills.office": "Microsoft Office",
+                "skills.level1": "Advanced",
+                "skills.latex": "LaTeX",
+				"skills.levelpython": "Intermediate",
+				"skills.python": "Python",
+                
+                "skills.languages": "Languages",
+                "skills.lang1": "French",
+                "skills.level2": "Working language",
+                "skills.lang2": "English",
+                "skills.level3": "Secondary language",
+				"skills.lang3": "Malagasy",
+                "skills.level4": "Native language",
+                
+                "skills.domains": "Areas of Expertise",
+                "skills.domain1": "Economic and econometric modeling",
+                "skills.domain2": "Public Economics",
+                "skills.domain3": "Applied Microeconomics",
+                "skills.domain4": "Law and Economics",
+                
+                "contact.info": "Contact Information",
+                "contact.email": "Email",
+                "contact.phone": "Phone",
+                "contact.address": "Address",
+                "contact.website": "Website",
+                
+                "contact.message": "Send a message",
+                "contact.form.name": "Full Name",
+                "contact.form.email": "Email Address",
+                "contact.form.subject": "Subject",
+                "contact.form.message": "Message",
+                "contact.form.submit": "Send Message",
+                
+                "footer.rights": "All rights reserved.",
+                "footer.design": "It is not what one knows that makes one wise, but how one puts it in service of what is right."
+            }
+        };
+
+        // Set initial language
+        let currentLang = 'fr';
+
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set French as default
+            changeLanguage('fr');
+            
+            // Add event listeners to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    changeLanguage(lang);
+                });
+            });
+        });
+
+        // Tab Navigation
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Get target tab
+                const targetTab = btn.getAttribute('data-tab');
+                
+                // Hide all panes
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                // Show target pane
+                document.getElementById(`${targetTab}-tab`).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            // For this example, we'll just show an alert
+            const message = currentLang === 'fr' 
+                ? 'Merci pour votre message! Je vous répondrai dans les plus brefs délais.' 
+                : 'Thank you for your message! I will respond as soon as possible.';
+            
+            alert(message);
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
